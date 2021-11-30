@@ -354,7 +354,7 @@ header .navbar {
 
 .banner .text-content h4 {
 	color: #f33f3f;
-	font-size: 22px;
+	font-size: 18px;
 	text-transform: uppercase;
 	font-weight: 700;
 	margin-bottom: 15px;
@@ -362,7 +362,7 @@ header .navbar {
 
 .banner .text-content h2 {
 	color: #fff;
-	font-size: 62px;
+	font-size: 36px;
 	text-transform: uppercase;
 	letter-spacing: 5px;
 }

@@ -124,7 +124,5 @@ dmypy.json
 .pyre/
 /.idea/.gitignore
 
-.idea
-.venv
-.git
-.gitignore
+../.gitignore
+
