@@ -126,3 +126,8 @@ dmypy.json
 
 ../.gitignore
 
+../.idea/
+.idea/
+
+g_shop/db.sqlite3
+
