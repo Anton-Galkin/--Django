@@ -20,10 +20,14 @@ from mainapp.views import main, product, contact, about
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', main),
-    path('index.html', main),
-    path('products.html', product),
-    path('contact.html', contact),
-    path('about.html', about)
+    path('', main, name='index'),
+    # path('index/', main, name='index'),
+    path('products/', product, name='products'),
+    path('contact/', contact, name='contact'),
+    path('about/', about, name='about'),
+    path('products_all', product, name='products_all'),
+    path('products_recommendation', product, name='products_recommendation'),
+    path('products_action', product, name='products_action'),
+    path('products_sale', product, name='products_sale'),
 
 ]
