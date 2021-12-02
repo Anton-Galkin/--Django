@@ -21,9 +21,9 @@ def write(content, name_file):
         json.dump(content, write_file, indent=4, sort_keys=True)
 
 
-def read(content):
-    with open(f"{content}.json", "r", encoding='UTF-8') as read_file:
-        return json.load(read_file)
+# def read(content):
+#     with open(f"{content}.json", "r", encoding='UTF-8') as read_file:
+#         return json.load(read_file)
 
 
 # write(links_menu, 'links_menu')
