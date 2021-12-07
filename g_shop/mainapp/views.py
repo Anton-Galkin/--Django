@@ -4,6 +4,8 @@ from django.shortcuts import render
 
 
 # Create your views here.
+from mainapp.models import Shoes, Clothes, Toy
+
 
 def read(content):
     with open(f"mainapp/templates/json/{content}.json", "r", encoding='UTF-8') as read_file:
@@ -29,9 +31,18 @@ header_menu = read('header_menu')
 # ]
 
 def main(request):
+
+    shoes = Shoes.objects.all()
+    clothes = Clothes.objects.all()
+    toys = Toy.objects.all()
+
     content = {
         'title': 'Главная',
         'header_menu': header_menu,
+        'shoes': shoes,
+        'clothes': clothes,
+        'toys': toys
+
     }
     return render(request, 'mainapp/index.html', content)
 

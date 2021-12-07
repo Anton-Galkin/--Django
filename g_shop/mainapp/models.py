@@ -34,6 +34,35 @@ class Product(models.Model):
         return f'{self.name} ({self.category.name})'
 
 
+class Shoes(Product):
+    brand_name = models.CharField(max_length=150, verbose_name='Бренд')
+    size = models.CharField(max_length=2, verbose_name='Размер')
+    gender = models.CharField(max_length=1, verbose_name='Пол')
+    color = models.CharField(max_length=50, verbose_name='Цвет')
+
+    def __str__(self):
+        return f'{self.name}, {self.brand_name}, {self.size}'
+
+
+class Clothes(Product):
+    brand_name = models.CharField(max_length=150, verbose_name='Бренд')
+    size = models.CharField(max_length=2, verbose_name='Размер')
+    gender = models.CharField(max_length=1, verbose_name='Пол')
+    color = models.CharField(max_length=50, verbose_name='Цвет')
+
+    def __str__(self):
+        return f'{self.name}, {self.brand_name}, {self.size}'
+
+
+class Toy(Product):
+    brand_name = models.CharField(max_length=150, verbose_name='Бренд')
+    t_type = models.CharField(max_length=150, verbose_name='Тип игрушки')
+    color = models.CharField(max_length=50, verbose_name='Цвет')
+
+    def __str__(self):
+        return f'{self.t_type}, {self.brand_name}, {self.name}'
+
+
 class CartProduct(models.Model):
     user = models.ForeignKey('Customer', verbose_name='Покупатель', on_delete=models.CASCADE)
     cart = models.ForeignKey('Cart', verbose_name='Корзина', on_delete=models.CASCADE, related_name='related_products')
@@ -59,7 +88,7 @@ class Cart(models.Model):
 
 class Customer(models.Model):
     user = models.ForeignKey(User, verbose_name='Пользователь', on_delete=models.CASCADE)
-    phone = models.CharField(max_length=12, verbose_name='Номер телефона')
+    phone = models.CharField(max_length=20, verbose_name='Номер телефона')
     address = models.CharField(max_length=255, verbose_name='Адрес')
 
     def __str__(self):
