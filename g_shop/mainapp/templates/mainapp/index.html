@@ -1,18 +1,17 @@
-<!DOCTYPE html>
-<html lang="ru">
+{% extends 'mainapp/base.html '%}
+{% load static %}
 
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  {% block fonts %}
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+  {% endblock %}
 
+  {% block title %}
     <title>Магазин Sixteen Главная</title>
+  {% endblock %}
 
+  {% block css%}
     <!-- Bootstrap core CSS -->
-    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 <!--
 
 TemplateMo 546 Sixteen Clothing
@@ -22,54 +21,16 @@ https://templatemo.com/tm-546-sixteen-clothing
 -->
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="static/assets/css/fontawesome.css">
-    <link rel="stylesheet" href="static/assets/css/templatemo-sixteen.css">
-    <link rel="stylesheet" href="static/assets/css/owl.css">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-sixteen.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+  {% endblock %}
 
-  </head>
 
   <body>
 
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
 
-    <!-- Header -->
-    <header class="">
-      <nav class="navbar navbar-expand-lg">
-        <div class="container">
-          <a class="navbar-brand" href="index.html"><h2>Sixteen <em>Clothing</em></h2></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">ДОМОЙ
-                  <span class="sr-only">(current)</span>
-                </a>
-              </li> 
-              <li class="nav-item">
-                <a class="nav-link" href="products.html">НАШИ ПРОДУКТЫ</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">О НАС</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">НАШИ КОНТАКТЫ</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
+    {% block content %}
     <!-- Page Content -->
     <!-- Banner Starts Here -->
     <div class="banner header-text">
@@ -102,15 +63,15 @@ https://templatemo.com/tm-546-sixteen-clothing
           <div class="col-md-12">
             <div class="section-heading">
               <h2>Новые коллекции</h2>
-              <a href="products.html">посмотреть все продукты <i class="fa fa-angle-right"></i></a>
+              <a href="{% url 'products' %}">посмотреть все продукты <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
           <div class="col-md-4">
             <div class="product-item">
-              <a href="#"><img src="static/assets/images/product_01.jpg" alt=""></a>
+              <a href="#"><img src="{% static 'assets/images/product_01.jpg' %}" alt=""></a>
               <div class="down-content">
-                <a href="#"><h4>Название товара</h4></a>
-                <h6>$25.75</h6>
+                <a href="#"><h4>Зимние ботинки</h4></a>
+                <h6>3000.00 &#8381;</h6>
                 <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
                 <ul class="stars">
                   <li><i class="fa fa-star"></i></li>
@@ -125,10 +86,10 @@ https://templatemo.com/tm-546-sixteen-clothing
           </div>
           <div class="col-md-4">
             <div class="product-item">
-              <a href="#"><img src="static/assets/images/product_02.jpg" alt=""></a>
+              <a href="#"><img src="{% static 'assets/images/product_02.jpg' %}" alt=""></a>
               <div class="down-content">
-                <a href="#"><h4>Название товара</h4></a>
-                <h6>$30.25</h6>
+                <a href="#"><h4>Шапка тёплая</h4></a>
+                <h6>2000.00 &#8381;</h6>
                 <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
                 <ul class="stars">
                   <li><i class="fa fa-star"></i></li>
@@ -143,10 +104,10 @@ https://templatemo.com/tm-546-sixteen-clothing
           </div>
           <div class="col-md-4">
             <div class="product-item">
-              <a href="#"><img src="static/assets/images/product_03.jpg" alt=""></a>
+              <a href="#"><img src="{% static 'assets/images/product_03.jpg' %}" alt=""></a>
               <div class="down-content">
-                <a href="#"><h4>Название товара</h4></a>
-                <h6>$20.45</h6>
+                <a href="#"><h4>Шарф</h4></a>
+                <h6>1500.00 &#8381;</h6>
                 <p>Sixteen Clothing is free CSS template provided by TemplateMo.</p>
                 <ul class="stars">
                   <li><i class="fa fa-star"></i></li>
@@ -161,10 +122,10 @@ https://templatemo.com/tm-546-sixteen-clothing
           </div>
           <div class="col-md-4">
             <div class="product-item">
-              <a href="#"><img src="static/assets/images/product_04.jpg" alt=""></a>
+              <a href="#"><img src="{% static 'assets/images/product_04.jpg' %}" alt=""></a>
               <div class="down-content">
-                <a href="#"><h4>Название товара</h4></a>
-                <h6>$15.25</h6>
+                <a href="#"><h4>Игрушка "Снеговик"</h4></a>
+                <h6>825.50 &#8381;</h6>
                 <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
                 <ul class="stars">
                   <li><i class="fa fa-star"></i></li>
@@ -179,10 +140,10 @@ https://templatemo.com/tm-546-sixteen-clothing
           </div>
           <div class="col-md-4">
             <div class="product-item">
-              <a href="#"><img src="static/assets/images/product_05.jpg" alt=""></a>
+              <a href="#"><img src="{% static 'assets/images/product_05.jpg' %}" alt=""></a>
               <div class="down-content">
-                <a href="#"><h4>Название товара</h4></a>
-                <h6>$12.50</h6>
+                <a href="#"><h4>Свитер тёплый</h4></a>
+                <h6>1800.00 &#8381;</h6>
                 <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
                 <ul class="stars">
                   <li><i class="fa fa-star"></i></li>
@@ -197,10 +158,10 @@ https://templatemo.com/tm-546-sixteen-clothing
           </div>
           <div class="col-md-4">
             <div class="product-item">
-              <a href="#"><img src="static/assets/images/product_06.jpg" alt=""></a>
+              <a href="#"><img src="{% static 'assets/images/product_06.jpg' %}" alt=""></a>
               <div class="down-content">
-                <a href="#"><h4>Название товара</h4></a>
-                <h6>$22.50</h6>
+                <a href="#"><h4>Ёлочное украшение</h4></a>
+                <h6>325.50 &#8381;</h6>
                 <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
                 <ul class="stars">
                   <li><i class="fa fa-star"></i></li>
@@ -236,12 +197,12 @@ https://templatemo.com/tm-546-sixteen-clothing
                 <li><a href="#">Corporis, omnis doloremque</a></li>
                 <li><a href="#">Non cum id reprehenderit</a></li>
               </ul>
-              <a href="about.html" class="filled-button">Подробнее</a>
+              <a href="{% url 'about' %}" class="filled-button">Подробнее</a>
             </div>
           </div>
           <div class="col-md-6">
             <div class="right-image">
-              <img src="static/assets/images/feature-image.jpg" alt="">
+              <img src="{% static 'assets/images/feature-image.jpg' %}" alt="">
             </div>
           </div>
         </div>
@@ -268,34 +229,22 @@ https://templatemo.com/tm-546-sixteen-clothing
         </div>
       </div>
     </div>
-
+    {% endblock %}
     
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="inner-content">
-              <p>Copyright &copy; 2020 Sixteen Clothing Co., Ltd.
-            
-            - Design: <a rel="nofollow noopener" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+
 
 
     <!-- Bootstrap core JavaScript -->
-    <script src="static/vendor/jquery/jquery.min.js"></script>
-    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
 
     <!-- Additional Scripts -->
-    <script src="static/assets/js/custom.js"></script>
-    <script src="static/assets/js/owl.js"></script>
-    <script src="static/assets/js/slick.js"></script>
-    <script src="static/assets/js/isotope.js"></script>
-    <script src="static/assets/js/accordions.js"></script>
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+    <script src="{% static 'assets/js/owl.js' %}"></script>
+    <script src="{% static 'assets/js/slick.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.js' %}"></script>
+    <script src="{% static 'assets/js/accordions.js' %}"></script>
 
 
     <script language = "text/Javascript"> 
