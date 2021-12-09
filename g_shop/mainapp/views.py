@@ -1,7 +1,9 @@
-import json
+from json import load
 
 from django.shortcuts import render
+from django.views.generic import DetailView
 
+from .models import Shoes, Clothes, Toy
 
 # Create your views here.
 from mainapp.models import Shoes, Clothes, Toy
@@ -9,11 +11,30 @@ from mainapp.models import Shoes, Clothes, Toy
 
 def read(content):
     with open(f"mainapp/templates/json/{content}.json", "r", encoding='UTF-8') as read_file:
-        return json.load(read_file)
+        return load(read_file)
 
 
 links_menu = read('links_menu')
 header_menu = read('header_menu')
+
+
+class ProductDetailView(DetailView):
+
+    CT_MODEL_MODEL_CLASS = {
+        'clothes': Clothes,
+        'shoes': Shoes,
+        'toy': Toy
+    }
+
+    def dispatch(self, request, *args, **kwargs):
+        ct_model = kwargs.get('ct_model')
+        self.model = self.CT_MODEL_MODEL_CLASS[kwargs['ct_model']]
+        self.queryset = self.model._base_manager.all()
+        return super().dispatch(request, *args, **kwargs)
+
+    context_object_name = 'product'
+    # template_name = 'index.html'
+    slug_url_kwarg = 'slug'
 
 
 # links_menu = [
@@ -30,7 +51,7 @@ header_menu = read('header_menu')
 #     {'href': 'contact', 'name': 'НАШИ КОНТАКТЫ'},
 # ]
 
-def main(request):
+def main(request, pk=None):
 
     shoes = Shoes.objects.all()
     clothes = Clothes.objects.all()
@@ -47,7 +68,7 @@ def main(request):
     return render(request, 'mainapp/index.html', content)
 
 
-def product(request):
+def product(request, pk=None):
     content = {
         'title': 'Товары',
         'links_menu': links_menu,

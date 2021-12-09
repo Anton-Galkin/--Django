@@ -16,8 +16,10 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from mainapp.views import main, product, contact, about
+
+from mainapp.views import ProductDetailView
 
 
 urlpatterns = [
@@ -25,6 +27,7 @@ urlpatterns = [
     path('', main, name='index'),
     # path('index/', main, name='index'),
     path('products/', product, name='products'),
+    path('products/', include('mainapp.urls'), name='products'),
     path('contact/', contact, name='contact'),
     path('about/', about, name='about'),
     path('products_all', product, name='products_all'),
@@ -32,6 +35,7 @@ urlpatterns = [
     path('products_action', product, name='products_action'),
     path('products_sale', product, name='products_sale'),
 
+    path('products/<str:ct_models>/<str:slug>/', ProductDetailView.as_view(), name='product_detail')
 ]
 
 if settings.DEBUG:

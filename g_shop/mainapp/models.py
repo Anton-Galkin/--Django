@@ -2,9 +2,15 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
+from django.urls import reverse
 
 
 User = get_user_model()
+
+
+# def get_product_url(obj, viwename):
+#     ct_model = obj.__class__._meta.model_name
+#     return reverse(viwename, kwargs={'ct_model': ct_model, 'slug': obj.slug})
 
 
 class Category(models.Model):
@@ -43,6 +49,9 @@ class Shoes(Product):
     def __str__(self):
         return f'{self.name}, {self.brand_name}, {self.size}'
 
+    # def get_absolute_url(self):
+    #     return get_product_url(self, 'product_detail')
+
 
 class Clothes(Product):
     brand_name = models.CharField(max_length=150, verbose_name='Бренд')
@@ -53,6 +62,9 @@ class Clothes(Product):
     def __str__(self):
         return f'{self.name}, {self.brand_name}, {self.size}'
 
+    # def get_absolute_url(self):
+    #     return get_product_url(self, 'product_detail')
+
 
 class Toy(Product):
     brand_name = models.CharField(max_length=150, verbose_name='Бренд')
@@ -61,6 +73,9 @@ class Toy(Product):
 
     def __str__(self):
         return f'{self.t_type}, {self.brand_name}, {self.name}'
+
+    # def get_absolute_url(self):
+    #     return get_product_url(self, 'product_detail')
 
 
 class CartProduct(models.Model):

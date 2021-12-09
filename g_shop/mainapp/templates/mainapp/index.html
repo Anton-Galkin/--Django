@@ -50,7 +50,7 @@ https://templatemo.com/tm-546-sixteen-clothing
         <div class="banner-item-03">
           <div class="text-content">
             <h4>Последняя минута</h4>
-            <h2>Воспользуйтесь гоячими предложениями</h2>
+            <h2>Воспользуйтесь горячими предложениями</h2>
           </div>
         </div>
       </div>
@@ -66,113 +66,10 @@ https://templatemo.com/tm-546-sixteen-clothing
               <a href="{% url 'products' %}">посмотреть все продукты <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="{% static 'assets/images/product_01.jpg' %}" alt=""></a>
-              <div class="down-content">
-                <a href="#"><h4>Зимние ботинки</h4></a>
-                <h6>3000.00 &#8381;</h6>
-                <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Обзоры (24)</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="{% static 'assets/images/product_02.jpg' %}" alt=""></a>
-              <div class="down-content">
-                <a href="#"><h4>Шапка тёплая</h4></a>
-                <h6>2000.00 &#8381;</h6>
-                <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Обзоры (21)</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="{% static 'assets/images/product_03.jpg' %}" alt=""></a>
-              <div class="down-content">
-                <a href="#"><h4>Шарф</h4></a>
-                <h6>1500.00 &#8381;</h6>
-                <p>Sixteen Clothing is free CSS template provided by TemplateMo.</p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Обзоры (36)</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="{% static 'assets/images/product_04.jpg' %}" alt=""></a>
-              <div class="down-content">
-                <a href="#"><h4>Игрушка "Снеговик"</h4></a>
-                <h6>825.50 &#8381;</h6>
-                <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Обзоры (48)</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="{% static 'assets/images/product_05.jpg' %}" alt=""></a>
-              <div class="down-content">
-                <a href="#"><h4>Свитер тёплый</h4></a>
-                <h6>1800.00 &#8381;</h6>
-                <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Обзоры (16)</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="#"><img src="{% static 'assets/images/product_06.jpg' %}" alt=""></a>
-              <div class="down-content">
-                <a href="#"><h4>Ёлочное украшение</h4></a>
-                <h6>325.50 &#8381;</h6>
-                <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                <ul class="stars">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                </ul>
-                <span>Обзоры (32)</span>
-              </div>
-            </div>
+
+              {% include 'includes/new_collection.html' %}
+
+
           </div>
         </div>
       </div>
