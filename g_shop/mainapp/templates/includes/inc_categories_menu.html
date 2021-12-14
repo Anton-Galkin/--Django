@@ -1,8 +1,8 @@
 <ul>
     {% for link in links_menu %}
     <li href="{% url link.href %}"
-           class="{% if request.resolver_match.url_name == link.href %}active{% endif %}"
-            data-filter="{% if link.name == 'Все товары' %}*{% elif link.name == 'Рекомендуем' %}.des{% elif link.name == 'Акции' %}.dev{% elif link.name == 'Распродажа' %}.gra{% endif %}">
+        class="{% if request.resolver_match.url_name == link.href %}active{% endif %}"
+        data-filter="{% if link.name == 'Все товары' %}*{% elif link.name == 'Рекомендуем' %}.des{% elif link.name == 'Акции' %}.dev{% elif link.name == 'Распродажа' %}.gra{% endif %}">
         {{ link.name }}
     </li>
     {% endfor %}
