@@ -1,0 +1,56 @@
+[
+{
+    "model": "mainapp.shoes",
+    "pk": 1,
+    "fields": {
+        "category": 1,
+        "slug": "shoes_winter_boots_columb",
+        "name": "Зимние ботинки",
+        "image": "columb_brown_8o7sNLU.jpg",
+        "short_desc": "Теплые зимние ботинки",
+        "description": "Отличные теплые ботинки из натуральной кожи с утеплителем из натурального меха",
+        "price": "3500.00",
+        "quantity": 3,
+        "brand_name": "Columb",
+        "size": "41",
+        "gender": "М",
+        "color": "Коричневый"
+    }
+},
+{
+    "model": "mainapp.shoes",
+    "pk": 2,
+    "fields": {
+        "category": 1,
+        "slug": "123",
+        "name": "тест боты",
+        "image": "img_1.jpg",
+        "short_desc": "краткое описание",
+        "description": "полное описание",
+        "price": "10.00",
+        "quantity": 1,
+        "brand_name": "тест",
+        "size": "10",
+        "gender": "М",
+        "color": "123"
+    }
+},
+{
+    "model": "mainapp.shoes",
+    "pk": 3,
+    "fields": {
+        "category": 1,
+        "slug": "2222",
+        "name": "Ботинки блеск",
+        "image": "img_1.jpg",
+        "short_desc": "краткое описание крутых ботинок",
+        "description": "полное описание очень крутых ботинок",
+        "price": "150.00",
+        "quantity": 1,
+        "brand_name": "тест",
+        "size": "50",
+        "gender": "М",
+        "color": "123"
+    }
+}
+]

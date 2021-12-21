@@ -1,20 +1,20 @@
 {% for product in clothes %}
 <div class="col-lg-4 col-md-4 all des">
-                      <div class="product-item">
-                        <a href="/media/{{ product.image }}"><img src="/media/{{ product.image }}" alt=""></a>
-                        <div class="down-content">
-                          <a href="#"><h4>{{ product.name }}</h4></a>
-                          <h6>{{ product.price }} &#8381;</h6>
-                          <p>{{ product.short_desc }}</p>
-                          <ul class="stars">
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                          </ul>
-                          <span>Просмотров (12)</span>
-                        </div>
-                      </div>
-                    </div>
+    <div class="product-item">
+        <a href="/media/{{ product.image }}"><img src="/media/{{ product.image }}" alt=""></a>
+        <div class="down-content">
+            <a href="#"><h4>{{ product.name }}</h4></a>
+            <h6>{{ product.price }} &#8381;</h6>
+            <p>{{ product.short_desc }}</p>
+            <ul class="stars">
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+            </ul>
+            <span>Просмотров (12)</span>
+        </div>
+    </div>
+</div>
 {% endfor %}
