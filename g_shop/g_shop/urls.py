@@ -23,7 +23,8 @@ from mainapp.views import main, product, contact, about
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
+    path('admin/', include('adminapp.urls', namespace='admin')),
 
     path('', include('mainapp.urls', namespace='main')),  #
 
