@@ -1,18 +1,18 @@
 [
     {
-        "href": "index",
+        "href": "main:index",
         "name": "\u0414\u041e\u041c\u041e\u0419"
     },
     {
-        "href": "products",
+        "href": "main:products",
         "name": "\u041d\u0410\u0428\u0418 \u0422\u041e\u0412\u0410\u0420\u042b"
     },
     {
-        "href": "about",
+        "href": "main:about",
         "name": "\u041e \u041d\u0410\u0421"
     },
     {
-        "href": "contact",
+        "href": "main:contact",
         "name": "\u041d\u0410\u0428\u0418 \u041a\u041e\u041d\u0422\u0410\u041a\u0422\u042b"
     }
 ]

@@ -19,24 +19,29 @@ from django.contrib import admin
 from django.urls import path, include
 from mainapp.views import main, product, contact, about
 
-from mainapp.views import ProductDetailView
+# from mainapp.views import ProductDetailView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', main, name='index'),
-    # path('index/', main, name='index'),
-    path('products/', product, name='products'),
-    path('products/', include('mainapp.urls'), name='products'),
-    path('contact/', contact, name='contact'),
-    path('about/', about, name='about'),
-    path('products_all', product, name='products_all'),
-    path('products_recommendation', product, name='products_recommendation'),
-    path('products_action', product, name='products_action'),
-    path('products_sale', product, name='products_sale'),
-    path('auth/', include('authapp.urls', namespace='auth')),
 
-    path('products/<str:ct_models>/<str:slug>/', ProductDetailView.as_view(), name='product_detail')
+    path('', include('mainapp.urls', namespace='main')),  #
+
+    # path('', main, name='index'),
+    # path('products/', product, name='products'),
+    # path('products/', include('mainapp.urls', namespace='products')),
+    # path('contact/', contact, name='contact'),
+    # path('about/', about, name='about'),
+
+    # path('products_all', product, name='products_all'),
+    # path('products_recommendation', product, name='products_recommendation'),
+    # path('products_action', product, name='products_action'),
+    # path('products_sale', product, name='products_sale'),
+
+    path('auth/', include('authapp.urls', namespace='auth')),
+    path('cart/', include('cartapp.urls', namespace='cart')),
+
+    # path('products/<str:ct_models>/<str:slug>/', ProductDetailView.as_view(), name='product_detail')  # Для отображения по другому
 ]
 
 if settings.DEBUG:

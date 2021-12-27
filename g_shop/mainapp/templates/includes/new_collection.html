@@ -3,7 +3,7 @@
     <div class="product-item">
         <a href="/media/{{ product.image }}"><img src="/media/{{ product.image }}" alt="Картинка" height=""></a>
         <div class="down-content">
-            <a href="#"><h4>{{ product.name }}</h4></a>
+            <a href="{% url 'cart:add' product.pk %}"><h4>{{ product.name }}</h4></a>
             <h6>{{ product.price }} &#8381;</h6>
             <p>{{ product.short_desc }}</p>
             <ul class="stars">
@@ -25,7 +25,7 @@
     <div class="product-item">
         <a href="/media/{{ product.image }}"><img src="/media/{{ product.image }}" alt="Картинка"></a>
         <div class="down-content">
-            <a href="#"><h4>{{ product.name }}</h4></a>
+            <a href="{% url 'cart:add' product.pk %}"><h4>{{ product.name }}</h4></a>
             <h6>{{ product.price }} &#8381;</h6>
             <p>{{ product.short_desc }}</p>
             <ul class="stars">
@@ -47,7 +47,7 @@
     <div class="product-item">
         <a href="/media/{{ product.image }}"><img src="/media/{{ product.image }}" alt="Картинка"></a>
         <div class="down-content">
-            <a href="#"><h4>{{ product.name }}</h4></a>
+            <a href="{% url 'cart:add' product.pk %}"><h4>{{ product.name }}</h4></a>
             <h6>{{ product.price }} &#8381;</h6>
             <p>{{ product.short_desc }}</p>
             <ul class="stars">
