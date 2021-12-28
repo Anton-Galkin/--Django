@@ -8,6 +8,7 @@ from .models import Shoes, Clothes, Toy, Category
 
 # Create your views here.
 from mainapp.models import Shoes, Clothes, Toy
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def read(content):
@@ -53,6 +54,50 @@ def main(request, pk=None):  # , pk=None
     return render(request, 'mainapp/index.html', content)
 
 
+def products(request, pk=None, page=1):
+    title = 'продукты'
+    links_menu = Category.objects.filter(is_active=True)
+    cart = Cart.objects.filter(user=request.user)
+
+    links_menu_category = Category.objects.all()
+
+    links_menu_shoes = Shoes.objects.all()
+    links_menu_clothes = Clothes.objects.all()
+    links_menu_toys = Toy.objects.all()
+    links_menu_product = links_menu_shoes.union(links_menu_clothes)
+
+    if pk is not None:
+        if pk == 0:
+            category = {
+                'pk': 0,
+                'name': 'все'
+            }
+            products = links_menu_product.objects.filter(is_active=True,
+                                                         category__is_active=True).order_by('price')
+        else:
+            category = get_object_or_404(Category, pk=pk)
+            products = links_menu_product.objects.filter(category__pk=pk,
+                                                         is_active=True, category__is_active=True).order_by('price')
+
+        paginator = Paginator(products, 2)
+        try:
+            products_paginator = paginator.page(page)
+        except PageNotAnInteger:
+            products_paginator = paginator.page(1)
+        except EmptyPage:
+            products_paginator = paginator.page(paginator.num_pages)
+
+        content = {
+            'title': title,
+            'links_menu': links_menu,
+            'category': category,
+            'products': products_paginator,
+            'cart': cart,
+        }
+
+        return render(request, 'mainapp/products_list.html', content)
+
+
 def product(request, pk=None):  # , pk=None
 
     links_menu_category = Category.objects.all()
@@ -60,9 +105,8 @@ def product(request, pk=None):  # , pk=None
     links_menu_shoes = Shoes.objects.all()
     links_menu_clothes = Clothes.objects.all()
     links_menu_toys = Toy.objects.all()
-    links_menu_product = links_menu_shoes.union(links_menu_clothes)  #, links_menu_toys
+    links_menu_product = links_menu_shoes.union(links_menu_clothes)  # , links_menu_toys
     # links_menu_product = Shoes.objects.raw('SELECT * FROM Shoes UNION SELECT * FROM Clothes UNION SELECT * FROM Toy')
-
 
     if pk is not None:
 
@@ -71,11 +115,11 @@ def product(request, pk=None):  # , pk=None
             cart = Cart.objects.filter(user=request.user)
 
         if pk == 0:
-            products = links_menu_product.order_by('price')#
+            products = links_menu_product.order_by('price')  #
             category = {'name': 'Все'}
         else:
             category = get_object_or_404(links_menu_category, pk=pk)
-            products = links_menu_product.filter(category__pk=pk).order_by('price')#
+            products = links_menu_product.filter(category__pk=pk).order_by('price')  #
 
         content = {
             'title': 'Товары',
@@ -89,7 +133,7 @@ def product(request, pk=None):  # , pk=None
 
         return render(request, 'mainapp/products_list.html', content)
 
-    same_products = links_menu_product#[3:5]
+    same_products = links_menu_product  # [3:5]
 
     content = {
         'title': 'Товары',
@@ -116,7 +160,6 @@ def about(request):
         'header_menu': header_menu,
     }
     return render(request, 'mainapp/about.html', content)
-
 
 # def context(request):
 #     content = {
