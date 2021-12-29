@@ -1,13 +1,12 @@
 from django.urls import path
 
-
 # from .views import ProductDetailView
 from .views import *
+
 # import mainapp.views as mainapp
 
 
 app_name = 'mainapp'
-
 
 urlpatterns = [
 
@@ -23,5 +22,10 @@ urlpatterns = [
 
     # path('products/<str:ct_models>/<str:slug>/', ProductDetailView.as_view(), name='product_detail'),  # другая модель вывода данных
     # path('', mainapp.product, name='index'),
-    path('category/<int:pk>/', product, name='category')
+    # path('category/<int:pk>/', product, name='category'),
+
+    path('category/<int:pk>/', products, name='category'),
+    path('category/<int:pk>/page/<int:page>/', products, name='page'),
+    path('product/<int:pk>/', product, name='product'),
+
 ]
